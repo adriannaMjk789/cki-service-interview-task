@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class FormPage {
+public class LoginPage {
 
     private final WebDriverWait wait;
 
@@ -24,7 +24,7 @@ public class FormPage {
 
     @FindBy(id = "message")
     WebElement loginMessage;
-    public FormPage(WebDriver driver) {
+    public LoginPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }

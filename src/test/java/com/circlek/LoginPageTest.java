@@ -1,6 +1,6 @@
 package com.circlek;
 
-import com.circleK.pages.FormPage;
+import com.circleK.pages.LoginPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,10 +10,10 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
 
-public class FormTest {
+public class LoginPageTest {
 
     private WebDriver driver;
-    private FormPage formPage;
+    private LoginPage loginPage;
 
     @BeforeMethod
     public void setUp() {
@@ -21,7 +21,7 @@ public class FormTest {
         driver = new ChromeDriver();
         driver.get("https://circlek-public.github.io/cki-service-recruitment-task/");
 
-        formPage = new FormPage(driver);
+        loginPage = new LoginPage(driver);
     }
 
     @AfterMethod
@@ -31,8 +31,8 @@ public class FormTest {
 
     @Test
     public void verifySuccessfulLoginWithValidCredentials() {
-        formPage.login("test01@example.com", "pass123");
+        loginPage.login("test01@example.com", "pass123");
 
-        assertTrue(formPage.isLoginSuccessMessageVisible(), "\"Login successful\" message is not displyed.");
+        assertTrue(loginPage.isLoginSuccessMessageVisible(), "\"Login successful\" message is not displyed.");
     }
 }
